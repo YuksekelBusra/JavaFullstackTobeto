@@ -1,0 +1,84 @@
+public class Main { /* Main classının scope başlangıcı */
+    public static int staticNumber = 0;
+    public static void main(String[] args) {  /* Main metotunun scope başlangıcı */
+        System.out.println(staticNumber);
+        //programlama
+        // elimizdeki ham verinin yönetilerek yazılım ürününe çevrilmesi.
+        //programing Concepts
+        //Variables - Değiskenler
+        // type- safe
+        String text= "Merhaba, Tobeto";
+        Integer number =10;
+        int number2=15;
+        //RAMde tutuluyor.
+        System.out.println(text);
+        System.out.println(number);
+        System.out.println(number2);
+
+        List<Integer> numbers= new ArrayList<Integer>();
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        System.out.println(numbers);
+        //scope -> kapsadığı alan, kapsam
+        if (1==1) {
+            System.out.println("koşul doğru"); // if scope
+            String text2 = "Merhaba"; // if scope
+            System.out.println(staticNumber); //main class
+            System.out.println(numbers); //main method
+            if (1 == 2) {
+                String text3 = "Merhaba 3";
+            }
+        }
+        else {
+            System.out.println("koşul yanlış");
+        }
+        // System.out.println(text2);
+
+        //Şart Blokları
+        //içerisine kabul ettiği koşul ile koşulun sağlanıp sağlanmama durumuna göre
+        //bir kod çalıştıran yapılar...
+        //==   !=  ><  >=  <=
+        int number3=4;
+        int number4=6;
+        if(number3 > number4) // boolean => true,false
+        {
+            System.out.println("Number 3 daha büyük");
+        }
+        else if(number3 > 5){
+            System.out.println("Number 3 5'ten büyük");
+        }
+        // -------------------- // çalışmama ihtimali var
+        if(number3==number4)
+        {
+            System.out.println("Number eşit");
+        }
+        else
+        {
+            System.out.println("Number 3 daha küçük ");
+        } // çalışır
+
+        // ** => Her if bloğundan sadece bir scope çalıştırılır
+
+        if(number3 > 10){
+            // bla bla...
+        }   //else yazamazsın -> eger kullanıcı boşssa cevap döndürme deriz bunda else olmaz
+
+        char state = 'A';
+
+        switch(state){ // state isimli değişkeni switch et
+            case 'A': // değer A olduğunda
+                System.out.println("A durumu");
+                break;
+            case 'B': // B olduğunda
+                System.out.println("B durumu");
+                break;
+            case 'C': // C olduğunda
+                System.out.println("C durumu");
+                break;
+            default:
+                System.out.println("Bilinmeyen durumlar");
+                break; //kullanmasan da sorun olmaz son scope tur.
+        }
+    }/* Main metodunun kapsadığı alan */
+} /* Main classının scope bitişi */
