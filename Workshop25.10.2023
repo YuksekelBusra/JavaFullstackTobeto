@@ -1,0 +1,34 @@
+
+package org.example;
+
+        import org.example.models.Category;
+        import org.example.models.Order;
+        import org.example.models.Product;
+        import org.example.models.User;
+
+public class Main {
+    public static void main(String[] args) {
+
+        User user1 = new User("Busra","yuksekel", 30000);
+        User user2 = new User("burak","yuksekel", 9000);
+
+        Product product1= new Product(0,"Bilgisayar",11111);
+        Product product2= new Product(1,"Mikrafon",1111);
+
+        Category category1= new Category(0,"Teknoloji ");
+        Category category2= new Category( 1,"Sistem parçası");
+
+        Order order1= new Order(0,1,"bbbbbb");
+        Order order2=new Order(1,2,"yyyyy");
+
+        user1.setFirstName("Busra");
+        product1.setUnitPrice(9500);
+        category1.setCategoryName("teknoloji");
+
+        Product[] products={product1,product2};
+
+        for (Product product:products) {
+            System.out.println(+ category.getCategoryName() +"Ürün "+ product.getProductName() + "   " + "Ürün fiyat = " + product.getUnitPrice());
+        }
+    }
+}
